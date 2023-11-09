@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 
 public class Pracownik {
-    private LocalDate birth_date;
+    private LocalDate data_urodzenia;
     private String email;
-    private String first_name;
+    private String imie;
     private String kod;
-    private String last_name;
+    private String nazwisko;
     private Reference<Menager> manager;
-    private
+    private miejsce_lokalizacji
     private String miejscowosc;
     private ArrayList<Pracownik> podwładni;
     private String telefon;
