@@ -32,7 +32,8 @@
         android:layout_height="70dp"
         android:text="Zadania"
         tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"
