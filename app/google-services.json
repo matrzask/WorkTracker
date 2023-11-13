@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:417710196759:android:f6177ead0fb2f9a3107452",
+        "android_client_info": {
+          "package_name": "com.example.worktracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNOb0P9Od0RyJ4ijElXv-HsdPu9A96L1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:417710196759:android:fc776024d7555890107452",
         "android_client_info": {
           "package_name": "com.package.worktracker"

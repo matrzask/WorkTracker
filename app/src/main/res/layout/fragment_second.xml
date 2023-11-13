@@ -31,16 +31,16 @@
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:text="Zadania"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="96dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:text="Statystyki"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="102dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="192dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
