@@ -1,21 +1,30 @@
 package com.example.worktracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.Timestamp;
+
+import java.util.ArrayList;
 
 public class WorkTrackerMainScreen extends AppCompatActivity {
     private Button button_zad;
     private Button button_stat;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_tracker_main_screen);
-
+        Pracownik p2 = new Pracownik("Anna", "Nowak", Timestamp.now(),
+                "Mickiewicza 55", "Warszawa", "15-456", "890890890","anowak@poczta.pl", new ArrayList<>(0));
+        Database.addEmployee(p2);
         button_zad = (Button) findViewById(R.id.button_zad);
         button_zad.setOnClickListener(new View.OnClickListener() {
             @Override
