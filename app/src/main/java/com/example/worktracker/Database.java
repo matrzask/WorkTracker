@@ -1,9 +1,14 @@
 package com.example.worktracker;
 
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class Database {
 
@@ -24,4 +29,26 @@ public class Database {
         return ref;
     }
 
+    public static ArrayList<WorkingHours> getWorkingHours(String id) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference ref = db.collection("pracownicy").document(id).collection("czas_pracy");
+        Task<QuerySnapshot> task = ref.get();
+        while(!task.isComplete()) {}
+        ArrayList<WorkingHours> arr = new ArrayList<>();
+        for(QueryDocumentSnapshot x : task.getResult()) {
+            WorkingHours w = x.toObject(WorkingHours.class);
+            w.setId(x.getId());
+            arr.add(w);
+        }
+        return arr;
+    }
+    public static WorkingHours getWorkingHoursById(String idPracownika, String idDnia) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("pracownicy").document(idPracownika)
+                .collection("czas_pracy").document(idDnia);
+        Task<DocumentSnapshot> task = ref.get();
+        while(!task.isComplete()) {}
+        DocumentSnapshot w = task.getResult();
+        return w.toObject(WorkingHours.class);
+    }
 }
