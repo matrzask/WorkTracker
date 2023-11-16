@@ -12,9 +12,12 @@ public class Database {
         return null;
     }
 
-    public static void addEmployee(Pracownik p) {
+    //Adds employee to database and returns a reference to the new document (use ref.getID to get employee id from it)
+    public static DocumentReference addEmployee(Pracownik p) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("pracownicy").add(p);
+        DocumentReference ref = db.collection("pracownicy").document();
+        ref.set(p);
+        return ref;
     }
 
 }
