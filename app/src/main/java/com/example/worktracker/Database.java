@@ -9,6 +9,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Database {
 
@@ -50,5 +51,13 @@ public class Database {
         while(!task.isComplete()) {}
         DocumentSnapshot w = task.getResult();
         return w.toObject(WorkingHours.class);
+    }
+
+    public static DocumentReference addWorkingHours(Date data, String id_pracownika, Date czasRozpoczecia, Date czasZakonczenia) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("pracownicy").document(id_pracownika)
+                .collection("czas_pracy").document();
+        ref.set(new WorkingHours(data, czasRozpoczecia, czasZakonczenia));
+        return ref;
     }
 }

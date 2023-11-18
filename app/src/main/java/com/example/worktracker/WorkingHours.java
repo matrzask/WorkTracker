@@ -8,11 +8,15 @@ public class WorkingHours {
     private String id;
     private Date data;
     private float godziny;
+    private Date czasRozpoczecia;
+    private Date czasZakonczenia;
 
     public WorkingHours() {}
-    public WorkingHours(Date data, float godziny) {
+    public WorkingHours(Date data, Date czasRozpoczecia, Date czasZakonczenia) {
         this.data = data;
-        this.godziny = godziny;
+        this.czasZakonczenia = czasZakonczenia;
+        this. czasRozpoczecia = czasRozpoczecia;
+        this.godziny = (czasZakonczenia.getTime() - czasRozpoczecia.getTime())/3600000f;
     }
 
     @Exclude
@@ -29,5 +33,17 @@ public class WorkingHours {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public boolean czyOsiemGodzin() {
+        return godziny >= 8;
+    }
+
+    public Date getCzasRozpoczecia() {
+        return czasRozpoczecia;
+    }
+
+    public Date getCzasZakonczenia() {
+        return czasZakonczenia;
     }
 }
