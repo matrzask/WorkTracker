@@ -2,10 +2,11 @@ package com.example.worktracker;
 
 import java.util.ArrayList;
 import java.util.Date;
+import com.google.firebase.Timestamp;
 
 
 public class Pracownik {
-    private Date birthDate;
+    private Timestamp birthDate;
     private String email;
     private String firstName;
     private String kod;
@@ -17,7 +18,7 @@ public class Pracownik {
 
     public Pracownik() {}
 
-    public Pracownik(String firstName, String lastName, Date birthDate,
+    public Pracownik(String firstName, String lastName,  Timestamp birthDate,
                      String ulica, String miejscowosc, String kod, String telefon, String email,
                      ArrayList<Pracownik> podwladni) {
         this.firstName = firstName;
@@ -39,7 +40,7 @@ public class Pracownik {
         return lastName;
     }
 
-    public Date getBirthDate() {
+    public Timestamp getBirthDate() {
         return birthDate;
     }
 
