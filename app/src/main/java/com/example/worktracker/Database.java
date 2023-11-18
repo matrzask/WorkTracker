@@ -32,7 +32,8 @@ public class Database {
 
     public static ArrayList<WorkingHours> getWorkingHours(String id) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference ref = db.collection("pracownicy").document(id).collection("czas_pracy");
+        CollectionReference ref = db.collection("pracownicy").document(id)
+                .collection("czas_pracy");
         Task<QuerySnapshot> task = ref.get();
         while(!task.isComplete()) {}
         ArrayList<WorkingHours> arr = new ArrayList<>();
@@ -53,11 +54,43 @@ public class Database {
         return w.toObject(WorkingHours.class);
     }
 
-    public static DocumentReference addWorkingHours(Date data, String id_pracownika, Date czasRozpoczecia, Date czasZakonczenia) {
+    public static DocumentReference addWorkingHours(Date data, String idPracownika, Date czasRozpoczecia, Date czasZakonczenia) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference ref = db.collection("pracownicy").document(id_pracownika)
+        DocumentReference ref = db.collection("pracownicy").document(idPracownika)
                 .collection("czas_pracy").document();
         ref.set(new WorkingHours(data, czasRozpoczecia, czasZakonczenia));
+        return ref;
+    }
+
+    public static ArrayList<Tasks> getTasks(String id) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference ref = db.collection("pracownicy").document(id)
+                .collection("zadania");
+        Task<QuerySnapshot> task = ref.get();
+        while(!task.isComplete()) {}
+        ArrayList<Tasks> arr = new ArrayList<>();
+        for(QueryDocumentSnapshot x : task.getResult()) {
+            Tasks w = x.toObject(Tasks.class);
+            w.setId(x.getId());
+            arr.add(w);
+        }
+        return arr;
+    }
+    public static Tasks getTaskById(String idPracownika, String idZadania) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("pracownicy").document(idPracownika)
+                .collection("zadania").document(idZadania);
+        Task<DocumentSnapshot> task = ref.get();
+        while(!task.isComplete()) {}
+        DocumentSnapshot w = task.getResult();
+        return w.toObject(Tasks.class);
+    }
+
+    public static DocumentReference addTask(String idPracownika, String nazwa, String opis) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("pracownicy").document(idPracownika)
+                .collection("zadania").document();
+        ref.set(new Tasks(nazwa, opis));
         return ref;
     }
 }
