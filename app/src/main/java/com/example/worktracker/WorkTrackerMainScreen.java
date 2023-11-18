@@ -22,9 +22,6 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_tracker_main_screen);
-        Pracownik p2 = new Pracownik("Anna", "Nowak", Timestamp.now(),
-                "Mickiewicza 55", "Warszawa", "15-456", "890890890","anowak@poczta.pl", new ArrayList<>(0));
-        Database.addEmployee(p2);
         button_zad = (Button) findViewById(R.id.button_zad);
         button_zad.setOnClickListener(new View.OnClickListener() {
             @Override
