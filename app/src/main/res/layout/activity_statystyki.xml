@@ -9,40 +9,47 @@
 
     <TextView
         android:id="@+id/text_stat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:text="Statystyki"/>
+        android:text="Statystyki"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/button_god"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/text_stat"
+        android:layout_below="@+id/text_stat"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="140dp"
         android:text="godziny pracy"
+        android:textSize="16dp"
         android:background="#90C8BB"/>
 
     <Button
         android:id="@+id/button_ur"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
         android:text="urlopy"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/text_stat"
-        android:layout_marginBottom="140dp"
+        android:layout_below="@+id/text_stat"
+        android:layout_marginTop="220dp"
+        android:textSize="16dp"
         android:background="#90C8BB"/>
 
     <Button
         android:id="@+id/button_arz"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
         android:text="archiwum zadań"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/text_stat"
-        android:layout_marginBottom="80dp"
+        android:layout_below="@+id/text_stat"
+        android:layout_marginTop="300dp"
+        android:textSize="16dp"
         android:background="#90C8BB"/>
 
     <Button
@@ -52,9 +59,10 @@
         android:layout_below="@+id/text_stat"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="80dp"
         android:background="#6D6DEF"
+        android:textSize="16dp"
         android:text="Powrót" />
 
 </RelativeLayout>
