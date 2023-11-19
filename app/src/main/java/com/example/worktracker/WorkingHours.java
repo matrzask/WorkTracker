@@ -15,7 +15,7 @@ public class WorkingHours {
     public WorkingHours(Date data, Date czasRozpoczecia, Date czasZakonczenia) {
         this.data = data;
         this.czasZakonczenia = czasZakonczenia;
-        this. czasRozpoczecia = czasRozpoczecia;
+        this.czasRozpoczecia = czasRozpoczecia;
         this.godziny = (czasZakonczenia.getTime() - czasRozpoczecia.getTime())/3600000f;
     }
 
@@ -31,8 +31,9 @@ public class WorkingHours {
         return godziny;
     }
 
-    public void setId(String id) {
+    public WorkingHours setId(String id) {
         this.id = id;
+        return this;
     }
 
     public boolean czyOsiemGodzin() {
