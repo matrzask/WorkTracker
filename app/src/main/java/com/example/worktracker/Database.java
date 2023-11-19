@@ -83,7 +83,7 @@ public class Database {
         Task<DocumentSnapshot> task = ref.get();
         while(!task.isComplete()) {}
         DocumentSnapshot w = task.getResult();
-        return w.toObject(Tasks.class);
+        return w.toObject(Tasks.class).setId(w.getId());
     }
 
     public static DocumentReference addTask(String idPracownika, String nazwa, String opis) {
@@ -91,6 +91,38 @@ public class Database {
         DocumentReference ref = db.collection("pracownicy").document(idPracownika)
                 .collection("zadania").document();
         ref.set(new Tasks(nazwa, opis));
+        return ref;
+    }
+
+    public static ArrayList<Holiday> getHolidays(String id) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference ref = db.collection("pracownicy").document(id)
+                .collection("urlopy");
+        Task<QuerySnapshot> task = ref.get();
+        while(!task.isComplete()) {}
+        ArrayList<Holiday> arr = new ArrayList<>();
+        for(QueryDocumentSnapshot x : task.getResult()) {
+            Holiday w = x.toObject(Holiday.class);
+            w.setId(x.getId());
+            arr.add(w);
+        }
+        return arr;
+    }
+    public static Holiday getHolidayById(String idPracownika, String idUrlopu) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("pracownicy").document(idPracownika)
+                .collection("urlopy").document(idUrlopu);
+        Task<DocumentSnapshot> task = ref.get();
+        while(!task.isComplete()) {}
+        DocumentSnapshot w = task.getResult();
+        return w.toObject(Holiday.class).setId(w.getId());
+    }
+
+    public static DocumentReference addHoliday(String idPracownika, Date dataRozpoczecia, Date dataZakonczenia) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("pracownicy").document(idPracownika)
+                .collection("urlopy").document();
+        ref.set(new Holiday(dataRozpoczecia, dataZakonczenia));
         return ref;
     }
 }
