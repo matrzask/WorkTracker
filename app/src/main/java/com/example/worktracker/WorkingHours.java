@@ -31,8 +31,9 @@ public class WorkingHours {
         return godziny;
     }
 
-    public void setId(String id) {
+    public WorkingHours setId(String id) {
         this.id = id;
+        return this;
     }
 
     public boolean czyOsiemGodzin() {

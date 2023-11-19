@@ -36,14 +36,16 @@ public class Tasks {
         return opis;
     }
 
-    public void setId(String id) {
+    public Tasks setId(String id) {
         this.id = id;
+        return this;
     }
 
-    public void changeStatus(String status) {
+    public Tasks changeStatus(String status) {
         if (status.equals("Do zrobienia") || status.equals("W trakcie") || status.equals("Wykonane"))
             this.status = status;
         else
             throw new RuntimeException("Niepoprawny status");
+        return this;
     }
 }
