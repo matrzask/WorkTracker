@@ -5,17 +5,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.Firebase;
 import com.google.firebase.Timestamp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class WorkTrackerMainScreen extends AppCompatActivity {
     private Button button_zad;
     private Button button_stat;
+    private TextView name;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -37,6 +42,10 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
                 openStatystyki();
             }
         });
+
+        name = (TextView) findViewById(R.id.textView);
+        String s = "Witaj " + Database.getCurrentEmployee().getFirstName()+ " " + Database.getCurrentEmployee().getLastName();
+        name.setText(s);
     }
 
     public void openZadania() {

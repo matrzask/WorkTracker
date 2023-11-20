@@ -1,5 +1,8 @@
 package com.example.worktracker;
 
+import static com.example.worktracker.Database.addEmployee;
+import static com.example.worktracker.Database.login;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +14,14 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.DocumentReference;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Login extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +37,10 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().equals("admin") && input_password.getText().toString().equals("admin")) {
+                //if (username.getText().toString().equals("admin") && input_password.getText().toString().equals("admin")) {
+                if (login(username.getText().toString(), input_password.getText().toString())) {
                     openMainScreen();
-                }else {
+                } else {
                     Toast.makeText(Login.this, "LOGIN FAILED !", Toast.LENGTH_SHORT).show();
                 }
             }
