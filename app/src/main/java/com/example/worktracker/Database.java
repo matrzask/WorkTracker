@@ -11,13 +11,15 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Date;
 
+/** @noinspection StatementWithEmptyBody*/
 public class Database {
 
+    private static Pracownik currentEmployee;
     public static Pracownik getEmployee(String id) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference ref = db.collection("pracownicy").document(id);
         Task<DocumentSnapshot> task = ref.get();
-        while(!task.isComplete()) {}
+        while(!task.isComplete());
         DocumentSnapshot p = task.getResult();
         return p.toObject(Pracownik.class);
     }
@@ -35,7 +37,7 @@ public class Database {
         CollectionReference ref = db.collection("pracownicy").document(id)
                 .collection("czas_pracy");
         Task<QuerySnapshot> task = ref.get();
-        while(!task.isComplete()) {}
+        while(!task.isComplete());
         ArrayList<WorkingHours> arr = new ArrayList<>();
         for(QueryDocumentSnapshot x : task.getResult()) {
             WorkingHours w = x.toObject(WorkingHours.class);
@@ -49,7 +51,7 @@ public class Database {
         DocumentReference ref = db.collection("pracownicy").document(idPracownika)
                 .collection("czas_pracy").document(idDnia);
         Task<DocumentSnapshot> task = ref.get();
-        while(!task.isComplete()) {}
+        while(!task.isComplete());
         DocumentSnapshot w = task.getResult();
         return w.toObject(WorkingHours.class);
     }
@@ -67,7 +69,7 @@ public class Database {
         CollectionReference ref = db.collection("pracownicy").document(id)
                 .collection("zadania");
         Task<QuerySnapshot> task = ref.get();
-        while(!task.isComplete()) {}
+        while(!task.isComplete());
         ArrayList<Tasks> arr = new ArrayList<>();
         for(QueryDocumentSnapshot x : task.getResult()) {
             Tasks w = x.toObject(Tasks.class);
@@ -99,7 +101,7 @@ public class Database {
         CollectionReference ref = db.collection("pracownicy").document(id)
                 .collection("urlopy");
         Task<QuerySnapshot> task = ref.get();
-        while(!task.isComplete()) {}
+        while(!task.isComplete());
         ArrayList<Holiday> arr = new ArrayList<>();
         for(QueryDocumentSnapshot x : task.getResult()) {
             Holiday w = x.toObject(Holiday.class);
@@ -113,7 +115,7 @@ public class Database {
         DocumentReference ref = db.collection("pracownicy").document(idPracownika)
                 .collection("urlopy").document(idUrlopu);
         Task<DocumentSnapshot> task = ref.get();
-        while(!task.isComplete()) {}
+        while(!task.isComplete());
         DocumentSnapshot w = task.getResult();
         return w.toObject(Holiday.class).setId(w.getId());
     }
@@ -124,5 +126,20 @@ public class Database {
                 .collection("urlopy").document();
         ref.set(new Holiday(dataRozpoczecia, dataZakonczenia));
         return ref;
+    }
+
+    public static boolean login(String username, String password) {
+        if(username.isEmpty()) return false;
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("users").document(username);
+        Task<DocumentSnapshot> task = ref.get();
+        while(!task.isComplete());
+        if(!task.getResult().exists()) return false;
+        if(!task.getResult().get("password", String.class).equals(password)) return false;
+        currentEmployee = getEmployee(task.getResult().get("idPracownika", String.class));
+        return true;
+    }
+    public static Pracownik getCurrentEmployee() {
+        return currentEmployee;
     }
 }
