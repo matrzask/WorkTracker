@@ -12,6 +12,15 @@
         android:theme="@style/Theme.WorkTracker"
         tools:targetApi="31">
         <activity
+            android:name=".Wykonane"
+            android:exported="false" />
+        <activity
+            android:name=".WTrakcie"
+            android:exported="false" />
+        <activity
+            android:name=".DoZrobienia"
+            android:exported="false" />
+        <activity
             android:name=".WorkTrackerMainScreen"
             android:exported="false" />
         <activity

@@ -9,41 +9,48 @@
 
     <TextView
         android:id="@+id/zadania_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zadania"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
+        android:text="Zadania"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp"
         />
 
     <Button
         android:id="@+id/button_doz"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/zadania_text"
+        android:layout_below="@+id/zadania_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="140dp"
         android:text="do zrobienia"
+        android:textSize="16dp"
         android:background="#EC746C"/>
 
     <Button
         android:id="@+id/button_wtr"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
         android:text="w trakcie"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/zadania_text"
-        android:layout_marginBottom="140dp"
+        android:layout_below="@+id/zadania_text"
+        android:layout_marginTop="220dp"
+        android:textSize="16dp"
         android:background="#DDD08C"/>
 
     <Button
         android:id="@+id/button_wyk"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
         android:text="wykonane"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/zadania_text"
-        android:layout_marginBottom="80dp"
+        android:layout_below="@+id/zadania_text"
+        android:layout_marginTop="300dp"
+        android:textSize="16dp"
         android:background="#90C8BB"/>
 
     <Button
@@ -53,9 +60,10 @@
         android:layout_below="@+id/zadania_text"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="500dp"
         android:layout_marginEnd="80dp"
         android:background="#6D6DEF"
+        android:textSize="16dp"
         android:text="Powrót" />
 
 

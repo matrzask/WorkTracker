@@ -9,19 +9,23 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:text="Main Screen" />
+        android:text="Witaj [Name] [Surname]"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/button_zad"
         android:layout_width="280dp"
         android:layout_height="58dp"
-        android:layout_above="@+id/textView"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp"
+        android:layout_marginTop="150dp"
         android:text="Zadania"
         android:textSize="20dp"
         android:background="#90C8BB"/>
@@ -30,11 +34,39 @@
         android:id="@+id/button_stat"
         android:layout_width="280dp"
         android:layout_height="58dp"
-        android:layout_above="@+id/textView"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="240dp"
         android:text="Statystyki"
         android:textSize="20dp"
         android:background="#90C8BB"/>
+
+    <Button
+        android:id="@+id/wyswietlacz"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:text="Pozostałe godziny pracy:"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="360dp"
+        android:background="#90C8BB"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:text="hh::mm::ss"
+        android:textStyle="bold"
+        android:textColor="#4D00EF"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:layout_marginTop="420dp"
+        android:layout_below="@id/textView"
+        android:background="#90C8BB"
+        />
 
 
 </RelativeLayout>

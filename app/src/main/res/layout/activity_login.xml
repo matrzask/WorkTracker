@@ -7,6 +7,7 @@
     android:background="@drawable/background"
     tools:context=".Login">
 
+
     <TextView
         android:id="@+id/loginText"
         android:layout_width="match_parent"
@@ -19,32 +20,54 @@
         android:gravity="center"/>
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
         android:layout_below="@id/loginText"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
-        android:hint="Username"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_margin="10dp"
-        android:padding="20dp"
         android:drawableLeft="@drawable/baseline_person_outline_24"
-        android:drawablePadding="20dp"/>
+        android:drawablePadding="20dp"
+        android:hint="Username"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password"
         android:layout_below="@id/username"
         android:background="#30ffffff"
+        android:drawablePadding="20dp"
         android:hint="Password"
+        android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:layout_margin="10dp"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/baseline_lock_24"
-        android:drawablePadding="20dp"/>
+
+        app:startIconDrawable="@drawable/baseline_lock_24"
+        app:startIconTint="@color/white"
+
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+
+        app:helperTextEnabled="true"
+        app:helperText="Wprowadź hasło">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/input_password"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     
     <Button
         android:layout_width="wrap_content"
