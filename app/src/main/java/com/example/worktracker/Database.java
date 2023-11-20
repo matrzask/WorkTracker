@@ -10,6 +10,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /** @noinspection StatementWithEmptyBody*/
 public class Database {
@@ -128,6 +130,7 @@ public class Database {
         return ref;
     }
 
+    //If login suceeds returns true and sets current employee to the logged in user
     public static boolean login(String username, String password) {
         if(username.isEmpty()) return false;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -141,5 +144,15 @@ public class Database {
     }
     public static Pracownik getCurrentEmployee() {
         return currentEmployee;
+    }
+
+    public static DocumentReference addUser(String username, String password, String idPracownika) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference ref = db.collection("users").document(username);
+        Map<String, String> user = new HashMap<>();
+        user.put("password", password);
+        user.put("idPracownika", idPracownika);
+        ref.set(user);
+        return ref;
     }
 }
