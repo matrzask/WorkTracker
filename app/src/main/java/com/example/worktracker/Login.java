@@ -1,10 +1,13 @@
 package com.example.worktracker;
 
 import static com.example.worktracker.Database.addEmployee;
+import static com.example.worktracker.Database.addUser;
 import static com.example.worktracker.Database.login;
+import static com.example.worktracker.R.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,16 +25,18 @@ import java.util.Date;
 
 public class Login extends AppCompatActivity {
 
-
+    private Button registerButton;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(layout.activity_login);
 
-        TextView username = (TextView) findViewById(R.id.username);
-        TextInputLayout password = (TextInputLayout)  findViewById(R.id.password);
-        TextInputEditText input_password = (TextInputEditText) findViewById(R.id.input_password);
-        Button loginButton = (Button) findViewById(R.id.loginButton);
+        TextView username = (TextView) findViewById(id.username);
+        TextInputLayout password = (TextInputLayout)  findViewById(id.password);
+        TextInputEditText input_password = (TextInputEditText) findViewById(id.input_password);
+        Button loginButton = (Button) findViewById(id.loginButton);
+        registerButton = (Button) findViewById(id.registerButton);
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -45,10 +50,22 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRegisterMenu();
+            }
+        });
     }
 
     public void openMainScreen() {
         Intent intent = new Intent(this, WorkTrackerMainScreen.class);
+        startActivity(intent);
+    }
+
+    public  void openRegisterMenu() {
+        Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }
 }

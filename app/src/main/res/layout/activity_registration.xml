@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Registration">
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registration"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:layout_margin="50dp"
+        android:gravity="center"/>
+
+    <ScrollView
+        android:id="@+id/scrollViewReg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/registerText"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="120dp"
+        android:background="#00D9D9D9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dane osobowe"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/registerImie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Imie"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerNazwisko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Nazwisko"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Data urodzenia"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerUlica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Ulica"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerMiejscowosc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Miejscowosc"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerKod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Kod pocztowy"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerTelefon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Telefon"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <EditText
+                android:id="@+id/registerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Email"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/registerUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Username"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/registerPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Password"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="10dp"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/registerButton2"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerText"
+        android:text="Zarejestruj"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:background="#6D6DEF"
+        />
+
+    <Button
+        android:id="@+id/buttonBackReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powrót"
+        android:background="#6D6DEF"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@id/registerButton2"
+        android:layout_below="@id/registerText"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="30dp"/>
+
+
+</RelativeLayout>
