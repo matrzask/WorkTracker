@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Urlopy"
+    android:background="#BAABBD">
+
+    <TextView
+        android:id="@+id/text_urlopy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Urlopy"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/rest"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="pozostałe: "
+        android:background="#90C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@id/text_urlopy" />
+
+    <TextView
+        android:id="@+id/have"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="wykorzystane: "
+        android:background="#EC746C"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/rest" />
+
+    <TextView
+        android:id="@+id/restDays"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="[dane] "
+        android:background="#0090C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_below="@id/text_urlopy"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/rest"/>
+
+    <TextView
+        android:id="@+id/haveDays"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="[dane2] "
+        android:background="#0090C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/restDays"
+        android:layout_toRightOf="@id/rest"/>
+
+    <Button
+        android:id="@+id/button_back3"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/text_urlopy"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="80dp"
+        android:background="#6D6DEF"
+        android:textSize="16dp"
+        android:text="Powrót" />
+
+
+</RelativeLayout>

@@ -55,10 +55,11 @@
         android:background="#90C8BB"/>
 
     <TextView
+        android:id="@+id/godziny"
         android:layout_width="300dp"
         android:layout_height="160dp"
         android:layout_centerHorizontal="true"
-        android:text="hh::mm::ss"
+        android:text="00:00:00"
         android:textStyle="bold"
         android:textColor="#4D00EF"
         android:textSize="50dp"
@@ -66,6 +67,20 @@
         android:layout_marginTop="420dp"
         android:layout_below="@id/textView"
         android:background="#90C8BB"
+        />
+    
+    <Button
+        android:id="@+id/stopstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/godziny"
+        android:text="START"
+        android:textSize="30dp"
+        android:textColor="#00DF00"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#006D6DEF"
+        android:onClick="startstopTapped"
         />
 
 

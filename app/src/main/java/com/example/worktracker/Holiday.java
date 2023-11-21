@@ -21,7 +21,7 @@ public class Holiday {
         return id;
     }
 
-    public float getLiczbaDni() {
+    public int getLiczbaDni() {
         return liczbaDni;
     }
 

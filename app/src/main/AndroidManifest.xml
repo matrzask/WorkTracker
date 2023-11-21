@@ -12,6 +12,9 @@
         android:theme="@style/Theme.WorkTracker"
         tools:targetApi="31">
         <activity
+            android:name=".Urlopy"
+            android:exported="false" />
+        <activity
             android:name=".Registration"
             android:exported="false" />
         <activity
