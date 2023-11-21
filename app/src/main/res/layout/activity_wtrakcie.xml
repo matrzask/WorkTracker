@@ -33,53 +33,13 @@
             android:orientation="vertical"
             android:gravity="center">
             <Button
+                android:id="@+id/traktat1"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:background="#DDD08C"
                 android:layout_margin="20dp"
                 android:text="task1"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:text="task2"
-                android:layout_margin="20dp"
-                android:background="#DDD08C"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task3"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task4"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task5"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task6"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task7"/>
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task8"/>
+
         </LinearLayout>
     </ScrollView>
 
