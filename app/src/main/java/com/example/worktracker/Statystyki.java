@@ -10,6 +10,7 @@ import android.widget.Button;
 public class Statystyki extends AppCompatActivity {
     private Button button_back2;
     private Button urlopy;
+    private Button buttonGod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,14 @@ public class Statystyki extends AppCompatActivity {
                 openUrlopy();
             }
         });
+
+        buttonGod = (Button) findViewById(R.id.button_god);
+        buttonGod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openGodziny();
+            }
+        });
     }
 
     public void openMainMenu() {
@@ -40,6 +49,11 @@ public class Statystyki extends AppCompatActivity {
 
     public void openUrlopy() {
         Intent intent = new Intent(this, Urlopy.class);
+        startActivity(intent);
+    }
+
+    public void openGodziny() {
+        Intent intent = new Intent(this, Godziny.class);
         startActivity(intent);
     }
 }

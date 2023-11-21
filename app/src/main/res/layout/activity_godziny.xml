@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Godziny"
+    android:background="#BAABBD">
+
+    <TextView
+        android:id="@+id/godziny_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Godziny pracy"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        />
+
+    <TextView
+        android:id="@+id/godziny1"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="godziny całkowite w dniu"
+        android:background="#90C8BB"
+        android:layout_below="@+id/godziny_text"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/godz1"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:text="0"
+        android:background="#0090C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:layout_below="@id/godziny_text"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/godziny1"/>
+
+    <TextView
+        android:id="@+id/godziny2"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="godziny całkowite w tygodniu"
+        android:background="#90C8BB"
+        android:layout_below="@+id/godziny1"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/godz2"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:text="35"
+        android:background="#0090C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:layout_below="@id/godz1"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@id/godziny1"/>
+
+    <TextView
+        android:id="@+id/godziny3"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="godziny całkowite w miesiącu"
+        android:background="#90C8BB"
+        android:layout_below="@+id/godziny2"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/godz3"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:text="84"
+        android:background="#0090C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:layout_below="@id/godz2"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@id/godziny1"/>
+
+    <Button
+        android:id="@+id/button_back4"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/godziny3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
+        android:background="#6D6DEF"
+        android:textSize="16dp"
+        android:text="Powrót" />
+
+
+</RelativeLayout>

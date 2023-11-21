@@ -22,6 +22,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class WorkTrackerMainScreen extends AppCompatActivity {
+    private Button logout;
     private Button button_zad;
     private Button button_stat;
     private TextView name;
@@ -55,6 +56,14 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
             }
         });
 
+        logout = (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLogin();
+            }
+        });
+
         name = (TextView) findViewById(R.id.textView);
         String s = "Witaj " + Database.getCurrentEmployee().getFirstName()+ " " + Database.getCurrentEmployee().getLastName();
         name.setText(s);
@@ -72,6 +81,11 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
 
     public void openStatystyki() {
         Intent intent = new Intent(this, Statystyki.class);
+        startActivity(intent);
+    }
+
+    public void openLogin() {
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 
