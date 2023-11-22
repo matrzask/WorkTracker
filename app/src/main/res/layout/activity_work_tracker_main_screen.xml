@@ -56,7 +56,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        android:text="Pozostałe godziny pracy:"
+        android:text="Przepracowane godziny pracy:"
         android:textStyle="bold"
         android:textSize="20dp"
         android:gravity="center"
