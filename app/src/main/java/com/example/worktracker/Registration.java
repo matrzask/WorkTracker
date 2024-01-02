@@ -22,20 +22,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Registration extends AppCompatActivity {
     private Button buttonBackReg;
-    /*private Button buttonReg;
-
-    private TextView username = (TextView) findViewById(R.id.registerUsername);
-    private TextView password = (TextView) findViewById(R.id.registerPassword);
-    private TextView imie = (TextView) findViewById(R.id.registerImie);
-    private TextView nazwisko = (TextView) findViewById(R.id.registerNazwisko);
-    private TextView ulica = (TextView) findViewById(R.id.registerUlica);
-    private TextView miejscowosc = (TextView) findViewById(R.id.registerMiejscowosc);
-    private TextView kod = (TextView) findViewById(R.id.registerKod);
-    private TextView telefon = (TextView) findViewById(R.id.registerTelefon);
-    private TextView email = (TextView) findViewById(R.id.registerEmail);
-    Pracownik registrator = new Pracownik(imie.getText().toString(), nazwisko.getText().toString(), new Date(),
-            ulica.getText().toString(), miejscowosc.getText().toString(), kod.getText().toString(),
-            telefon.getText().toString(), email.getText().toString(), new ArrayList<>());*/
+    private Button buttonReg;
 
 
     @Override
@@ -43,7 +30,7 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         buttonBackReg = (Button) findViewById(R.id.buttonBackReg);
-        //buttonReg = (Button) findViewById(R.id.registerButton2);
+        buttonReg = (Button) findViewById(R.id.registerButton2);
 
         buttonBackReg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,16 +39,28 @@ public class Registration extends AppCompatActivity {
             }
         });
 
-      /*  buttonReg.setOnClickListener(new View.OnClickListener() {
+        TextView username = (TextView) findViewById(R.id.registerUsername);
+        TextView password = (TextView) findViewById(R.id.registerPassword);
+        TextView imie = (TextView) findViewById(R.id.registerImie);
+        TextView nazwisko = (TextView) findViewById(R.id.registerNazwisko);
+        TextView ulica = (TextView) findViewById(R.id.registerUlica);
+        TextView miejscowosc = (TextView) findViewById(R.id.registerMiejscowosc);
+        TextView kod = (TextView) findViewById(R.id.registerKod);
+        TextView telefon = (TextView) findViewById(R.id.registerTelefon);
+        TextView email = (TextView) findViewById(R.id.registerEmail);
+
+      buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer number = new Random().nextInt(1000000);
+                Integer number = new Random().nextInt(10000000);
                 String id = number.toString();
                 Database.addUser(username.getText().toString(), password.getText().toString(), id);
-                Database.addEmployee(registrator);
+                Database.addEmployee(new Pracownik(imie.getText().toString(), nazwisko.getText().toString(), new Date(),
+                        ulica.getText().toString(), miejscowosc.getText().toString(), kod.getText().toString(),
+                        telefon.getText().toString(), email.getText().toString(), new ArrayList<>()));
                 openLogin();
             }
-        });*/
+        });
     }
 
     public void openLogin() {

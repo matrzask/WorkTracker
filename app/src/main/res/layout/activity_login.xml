@@ -68,16 +68,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    
     <Button
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginButton"
         android:layout_below="@id/password"
-        android:text="Zaloguj"
-        android:background="#ff9988"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#ff9988"
+        android:text="Zaloguj" />
 
     <Button
         android:id="@+id/registerButton"
