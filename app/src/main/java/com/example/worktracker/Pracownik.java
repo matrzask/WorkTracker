@@ -1,12 +1,14 @@
 package com.example.worktracker;
 
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.Exclude;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 
 public class Pracownik {
+    private String id;
     private Date birthDate;
     private String email;
     private String firstName;
@@ -67,5 +69,15 @@ public class Pracownik {
 
     public ArrayList<DocumentReference> getPodwladni() {
         return podwladni;
+    }
+
+    public Pracownik setId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    @Exclude
+    public String getId() {
+        return id;
     }
 }
