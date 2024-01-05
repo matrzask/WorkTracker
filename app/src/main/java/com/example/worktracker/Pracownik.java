@@ -1,5 +1,7 @@
 package com.example.worktracker;
 
+import com.google.firebase.firestore.DocumentReference;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,7 +13,7 @@ public class Pracownik {
     private String kod;
     private String lastName;
     private String miejscowosc;
-    private ArrayList<Pracownik> podwladni;
+    private ArrayList<DocumentReference> podwladni;
     private String telefon;
     private String ulica;
 
@@ -19,7 +21,7 @@ public class Pracownik {
 
     public Pracownik(String firstName, String lastName,  Date birthDate,
                      String ulica, String miejscowosc, String kod, String telefon, String email,
-                     ArrayList<Pracownik> podwladni) {
+                     ArrayList<DocumentReference> podwladni) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -63,7 +65,7 @@ public class Pracownik {
         return email;
     }
 
-    public ArrayList<Pracownik> getPodwladni() {
+    public ArrayList<DocumentReference> getPodwladni() {
         return podwladni;
     }
 }
