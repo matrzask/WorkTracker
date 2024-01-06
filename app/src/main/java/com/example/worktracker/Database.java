@@ -23,7 +23,7 @@ public class Database {
         Task<DocumentSnapshot> task = ref.get();
         while(!task.isComplete());
         DocumentSnapshot p = task.getResult();
-        return p.toObject(Pracownik.class);
+        return p.toObject(Pracownik.class).setId(id);
     }
 
     //Adds employee to database and returns a reference to the new document (use ref.getID to get employee id from it)
