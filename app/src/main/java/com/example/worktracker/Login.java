@@ -31,7 +31,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_login);
-
         TextView username = (TextView) findViewById(id.username);
         TextInputLayout password = (TextInputLayout)  findViewById(id.password);
         TextInputEditText input_password = (TextInputEditText) findViewById(id.input_password);
@@ -44,7 +43,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 //if (username.getText().toString().equals("admin") && input_password.getText().toString().equals("admin")) {
                 if (login(username.getText().toString(), input_password.getText().toString())) {
-                    openMainScreen();
+                    if(username.getText().toString().contains("manager")) openManagerScreen();
+                    else openMainScreen();
                 } else {
                     Toast.makeText(Login.this, "LOGIN FAILED !", Toast.LENGTH_SHORT).show();
                 }
@@ -66,6 +66,11 @@ public class Login extends AppCompatActivity {
 
     public  void openRegisterMenu() {
         Intent intent = new Intent(this, Registration.class);
+        startActivity(intent);
+    }
+
+    public void openManagerScreen() {
+        Intent intent = new Intent(this, ManagerScreen.class);
         startActivity(intent);
     }
 }

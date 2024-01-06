@@ -19,6 +19,7 @@
         android:textStyle="bold"/>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/text_wtr"
@@ -27,20 +28,6 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="120dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <Button
-                android:id="@+id/traktat1"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:background="#DDD08C"
-                android:layout_margin="20dp"
-                android:text="task1"/>
-
-        </LinearLayout>
     </ScrollView>
 
     <Button

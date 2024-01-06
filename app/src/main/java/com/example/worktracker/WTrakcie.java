@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class WTrakcie extends AppCompatActivity {
     private Button button_back_zad2;
@@ -26,18 +30,32 @@ public class WTrakcie extends AppCompatActivity {
                 openZadania();
             }
         });
+        ScrollView scrollView2 = (ScrollView) findViewById(R.id.scrollView2);
 
-        traktat1 = (Button) findViewById(R.id.traktat1);
-        String s = Database.getTaskById("kSwJLfMLvRvbDAfj81NW", "tOJAduUVvR3hX7GmlQ9x").getNazwa();
-        traktat1.setText(s);
+        LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        traktat1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String u = Database.getTaskById("kSwJLfMLvRvbDAfj81NW", "tOJAduUVvR3hX7GmlQ9x").getOpis();
-                Toast.makeText(WTrakcie.this, u, Toast.LENGTH_SHORT).show();
+        ArrayList<Tasks> tasks =  Database.getTasks(Database.getCurrentEmployee().getId());
+
+        for(int i = 0; i < tasks.size(); i++) {
+            if(tasks.get(i).getStatus().equals("W trakcie")) {
+                Button button = new Button(this);
+                linearLayout.addView(button);
+                Tasks task = tasks.get(i);
+                button.setText(task.getNazwa());
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(WTrakcie.this, task.getOpis(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
             }
-        });
+        }
+        scrollView2.addView(linearLayout);
     }
 
     public void openZadania() {
