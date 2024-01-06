@@ -40,6 +40,14 @@ public class Statystyki extends AppCompatActivity {
                 openGodziny();
             }
         });
+
+        Button buttonArz = (Button) findViewById(R.id.button_arz);
+        buttonArz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openArchiwum();
+            }
+        });
     }
 
     public void openMainMenu() {
@@ -54,6 +62,11 @@ public class Statystyki extends AppCompatActivity {
 
     public void openGodziny() {
         Intent intent = new Intent(this, Godziny.class);
+        startActivity(intent);
+    }
+
+    public void openArchiwum() {
+        Intent intent = new Intent(this, ArchiwumZ.class);
         startActivity(intent);
     }
 }

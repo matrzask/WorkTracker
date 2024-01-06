@@ -12,6 +12,12 @@
         android:theme="@style/Theme.WorkTracker"
         tools:targetApi="31">
         <activity
+            android:name=".ArchiwumZ"
+            android:exported="false" />
+        <activity
+            android:name=".InfoPracownik"
+            android:exported="false" />
+        <activity
             android:name=".ManagerScreen"
             android:exported="false" />
         <activity

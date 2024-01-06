@@ -23,7 +23,7 @@
         android:id="@+id/rest"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="pozostałe: "
+        android:text="pozostało dni: "
         android:background="#90C8BB"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
         android:id="@+id/have"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="wykorzystane: "
+        android:text="wykorzystano: "
         android:background="#EC746C"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -73,6 +73,33 @@
         android:layout_below="@id/restDays"
         android:layout_toRightOf="@id/rest"/>
 
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:text="Informacje o datach urlopu "
+        android:background="#0090C8BB"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="180dp"
+        android:layout_below="@id/text_urlopy"
+        android:layout_centerHorizontal="true"/>
+
+    <ScrollView
+        android:id="@+id/scrollViewH"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/info"
+        android:background="#D9D9D9"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="120dp">
+
+    </ScrollView>
+
+
     <Button
         android:id="@+id/button_back3"
         android:layout_width="100dp"
@@ -80,7 +107,7 @@
         android:layout_below="@+id/text_urlopy"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="80dp"
         android:background="#6D6DEF"
         android:textSize="16dp"

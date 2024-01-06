@@ -3,7 +3,9 @@ package com.example.worktracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -37,9 +39,21 @@ public class ManagerScreen extends AppCompatActivity {
             Button button = new Button(this);
             button.setText(Database.getEmployee(employees.get(i).getId()).getFirstName() +" "+ Database.getEmployee(employees.get(i).getId()).getLastName());
             linearLayout.addView(button);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openInfoPracownik();
+                }
+            });
         }
 
         scrollViewManager.addView(linearLayout);
 
+    }
+
+    public void openInfoPracownik() {
+        Intent intent = new Intent(this, InfoPracownik.class);
+        startActivity(intent);
     }
 }

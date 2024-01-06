@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Godziny"
+    tools:context=".ArchiwumZ"
     android:background="#BAABBD">
 
     <TextView
-        android:id="@+id/godziny_text"
+        android:id="@+id/archiwumT"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:text="Godziny pracy"
+        android:text="Archiwum zadan"
         android:gravity="center"
         android:background="#6D6DEF"
         android:textColor="#FFFFFF"
@@ -21,10 +21,10 @@
         />
 
     <ScrollView
-        android:id="@+id/scrollViewG"
+        android:id="@+id/scrollViewA"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/godziny_text"
+        android:layout_below="@id/archiwumT"
         android:background="#D9D9D9"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="40dp"
@@ -32,13 +32,11 @@
 
     </ScrollView>
 
-
-
     <Button
-        android:id="@+id/button_back4"
+        android:id="@+id/button_back5"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/godziny_text"
+        android:layout_below="@+id/archiwumT"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
         android:layout_marginTop="550dp"
@@ -46,6 +44,7 @@
         android:background="#6D6DEF"
         android:textSize="16dp"
         android:text="Powrót" />
+
 
 
 </RelativeLayout>
