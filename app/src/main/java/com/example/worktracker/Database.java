@@ -25,6 +25,13 @@ public class Database {
         DocumentSnapshot p = task.getResult();
         return p.toObject(Pracownik.class).setId(id);
     }
+    public static Pracownik getEmployee(DocumentReference ref) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Task<DocumentSnapshot> task = ref.get();
+        while(!task.isComplete());
+        DocumentSnapshot p = task.getResult();
+        return p.toObject(Pracownik.class).setId(ref.getId());
+    }
 
     //Adds employee to database and returns a reference to the new document (use ref.getID to get employee id from it)
     public static DocumentReference addEmployee(Pracownik p) {
