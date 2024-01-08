@@ -1,8 +1,10 @@
 package com.example.worktracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,13 +48,16 @@ public class Urlopy extends AppCompatActivity {
         haveDays.setText(have);
 
         ScrollView scrollViewH = (ScrollView) findViewById(R.id.scrollViewH);
-
+        LinearLayoutCompat.LayoutParams buttonLayoutParams = new LinearLayoutCompat.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         for(int i = 0; i < holidays.size(); i++) {
             Button button = new Button(this);
             button.setText(holidays.get(i).getDataRozpoczecia().toString().substring(0, 10) + " : " + holidays.get(i).getDataZakonczenia().toString().substring(0, 10));
+            button.setBackgroundColor(Color.rgb(200, 200, 200));
+            button.setLayoutParams(buttonLayoutParams);
+            buttonLayoutParams.setMargins(10, 30, 10, 30);
             linearLayout.addView(button);
         }
         scrollViewH.addView(linearLayout);

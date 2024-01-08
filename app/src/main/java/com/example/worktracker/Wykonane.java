@@ -1,8 +1,10 @@
 package com.example.worktracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +37,7 @@ public class Wykonane extends AppCompatActivity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         ArrayList<Tasks> tasks =  Database.getTasks(Database.getCurrentEmployee().getId());
+        LinearLayoutCompat.LayoutParams buttonLayoutParams = new LinearLayoutCompat.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         for(int i = 0; i < tasks.size(); i++) {
             if(tasks.get(i).getStatus().equals("Wykonane")) {
@@ -42,6 +45,9 @@ public class Wykonane extends AppCompatActivity {
                 linearLayout.addView(button);
                 Tasks task = tasks.get(i);
                 button.setText(task.getNazwa());
+                button.setBackgroundColor(Color.rgb(140, 255, 140));
+                button.setLayoutParams(buttonLayoutParams);
+                buttonLayoutParams.setMargins(10, 30, 10, 30);
 
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
