@@ -1,24 +1,18 @@
 package com.example.worktracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.Timestamp;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import com.google.firebase.firestore.GeoPoint;
+
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Registration extends AppCompatActivity {
     private Button buttonBackReg;
@@ -57,7 +51,7 @@ public class Registration extends AppCompatActivity {
                 Database.addUser(username.getText().toString(), password.getText().toString(), id);
                 Database.addEmployee(new Pracownik(imie.getText().toString(), nazwisko.getText().toString(), new Date(),
                         ulica.getText().toString(), miejscowosc.getText().toString(), kod.getText().toString(),
-                        telefon.getText().toString(), email.getText().toString(), new ArrayList<>()));
+                        telefon.getText().toString(), email.getText().toString(), new ArrayList<>(), new GeoPoint(0,0)));
                 openLogin();
             }
         });

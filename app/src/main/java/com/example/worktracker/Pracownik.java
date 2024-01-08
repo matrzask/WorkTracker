@@ -2,6 +2,7 @@ package com.example.worktracker;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.GeoPoint;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,12 +19,13 @@ public class Pracownik {
     private ArrayList<DocumentReference> podwladni;
     private String telefon;
     private String ulica;
+    private GeoPoint miejscePracy;
 
     public Pracownik() {}
 
     public Pracownik(String firstName, String lastName,  Date birthDate,
                      String ulica, String miejscowosc, String kod, String telefon, String email,
-                     ArrayList<DocumentReference> podwladni) {
+                     ArrayList<DocumentReference> podwladni, GeoPoint miejscePracy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -33,6 +35,7 @@ public class Pracownik {
         this.telefon = telefon;
         this.email = email;
         this.podwladni = podwladni;
+        this.miejscePracy = miejscePracy;
     }
 
     public String getFirstName() {
@@ -79,5 +82,9 @@ public class Pracownik {
     @Exclude
     public String getId() {
         return id;
+    }
+
+    public GeoPoint getMiejscePracy() {
+        return miejscePracy;
     }
 }
