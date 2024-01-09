@@ -54,15 +54,14 @@ public class Urlopy extends AppCompatActivity {
 
         for(int i = 0; i < holidays.size(); i++) {
             Button button = new Button(this);
-            button.setText(holidays.get(i).getDataRozpoczecia().toString().substring(0, 10) + " : " + holidays.get(i).getDataZakonczenia().toString().substring(0, 10));
+            String s = holidays.get(i).getDataRozpoczecia().toString().substring(0, 10) + holidays.get(i).getDataRozpoczecia().toString().substring(23, 28) + " : " + holidays.get(i).getDataZakonczenia().toString().substring(0, 10) + holidays.get(i).getDataZakonczenia().toString().substring(23, 28);
+            button.setText(s);
             button.setBackgroundColor(Color.rgb(200, 200, 200));
             button.setLayoutParams(buttonLayoutParams);
             buttonLayoutParams.setMargins(10, 30, 10, 30);
             linearLayout.addView(button);
         }
         scrollViewH.addView(linearLayout);
-
-
     }
 
     public void openStatystyki() {

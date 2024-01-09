@@ -43,7 +43,7 @@ public class ManagerScreen extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Database.setCurrentEmployee(Database.getEmployee(employees.get(finalI).getId()));
+                    Database.setCurrentEmployee(Database.getEmployee(employees.get(finalI).getId()), Database.getCurrentEmployee());
                     openInfoPracownik();
                 }
             });
@@ -51,10 +51,23 @@ public class ManagerScreen extends AppCompatActivity {
 
         scrollViewManager.addView(linearLayout);
 
+        Button wyloguj = (Button) findViewById(R.id.logout);
+        wyloguj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLogin();
+            }
+        });
+
     }
 
     public void openInfoPracownik() {
         Intent intent = new Intent(this, InfoPracownik.class);
+        startActivity(intent);
+    }
+
+    public void openLogin() {
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 }

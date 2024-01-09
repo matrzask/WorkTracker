@@ -2,13 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,10 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkTracker"
         tools:targetApi="31">
+        <activity
+            android:name=".AddTask"
+            android:exported="false" />
+        <activity
+            android:name=".ViewTasks"
+            android:exported="false" />
+        <activity
+            android:name=".ViewHours"
+            android:exported="false" />
+
         <service
-            android:name="Lokalizacja"
-            android:foregroundServiceType="location">
-        </service>
+            android:name=".Lokalizacja"
+            android:foregroundServiceType="location" />
+
         <activity
             android:name=".ArchiwumZ"
             android:exported="false" />

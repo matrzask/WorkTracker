@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Wykonane"
-    android:background="#BAABBD">
+    android:background="#444444">
 
     <TextView
         android:id="@+id/text_wyk"
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/text_wyk"
-        android:background="#D9D9D9"
+        android:background="#777777"
         android:layout_marginTop="40dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="120dp">

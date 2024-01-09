@@ -44,7 +44,8 @@ public class Godziny extends AppCompatActivity {
         ArrayList<WorkingHours> workingHours = Database.getWorkingHours(Database.getCurrentEmployee().getId());
         for(int i = 0; i < workingHours.size(); i++) {
             Button button = new Button(this);
-            button.setText(workingHours.get(i).getData().toString().substring(0, 10) + " : " + workingHours.get(i).getGodziny() + " hours");
+            String s = workingHours.get(i).getData().toString().substring(0, 10) + workingHours.get(i).getData().toString().substring(23, 28) + " : " + workingHours.get(i).getGodziny() + " hours";
+            button.setText(s);
             button.setTextSize(16);
             if(workingHours.get(i).getGodziny() < 8) button.setBackgroundColor(Color.rgb(255, 120, 120));
             else button.setBackgroundColor(Color.rgb(153, 255, 153));

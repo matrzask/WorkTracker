@@ -1,16 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoPracownik">
+    tools:context=".InfoPracownik"
+    android:background="#444444">
 
     <TextView
-        android:id="@+id/titleWorker"
+        android:id="@+id/titleInfo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pracownik"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Dane pracownika"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp"
         tools:ignore="MissingConstraints" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/name"
+        android:layout_below="@id/titleInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:includeFontPadding="true"
+        android:layout_height="50dp"
+        android:text="Imie i nazwisko"
+        android:background="#11DDBB"
+    />
+
+    <ScrollView
+        android:id="@+id/scrollViewM"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/name"
+        android:background="#777777"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/telefon"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Telefon"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/mail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="E - Mail"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/birthDate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Birth Date"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/street"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Adres - Ulica"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Adres - Kod"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/town"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Adres - Miejscowosc"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/zobaczGodziny"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollViewM"
+        android:layout_centerHorizontal="true"
+        android:background="#6D6DEF"
+        android:text="zobacz godziny pracy"
+        android:textColor="@color/white"
+
+        />
+
+    <Button
+        android:id="@+id/zobaczTaski"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/zobaczGodziny"
+        android:layout_centerHorizontal="true"
+        android:background="#6D6DEF"
+        android:text="zobacz taski"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/dodajTask"
+        android:layout_width="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/zobaczTaski"
+        android:background="#6D6DEF"
+        android:layout_centerHorizontal="true"
+        android:text="dodaj task"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/button_backM"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dodajTask"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:background="#6D6DEF"
+        android:textSize="16dp"
+        android:text="Powrót" />
+
+
+</RelativeLayout>

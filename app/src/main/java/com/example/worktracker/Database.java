@@ -17,6 +17,8 @@ import java.util.Map;
 public class Database {
 
     private static Pracownik currentEmployee;
+
+    private static Pracownik currentEmployer;
     public static Pracownik getEmployee(String id) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference ref = db.collection("pracownicy").document(id);
@@ -153,9 +155,12 @@ public class Database {
         return currentEmployee;
     }
 
-    public static void setCurrentEmployee(Pracownik p) {
+    public static void setCurrentEmployee(Pracownik p, Pracownik employer) {
         currentEmployee = p;
+        currentEmployer = employer;
     }
+
+    public static  Pracownik getCurrentEmployer() { return currentEmployer; }
 
     public static DocumentReference addUser(String username, String password, String idPracownika) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
