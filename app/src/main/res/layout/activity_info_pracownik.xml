@@ -30,6 +30,8 @@
         android:includeFontPadding="true"
         android:layout_height="50dp"
         android:text="Imie i nazwisko"
+        android:textStyle="bold"
+        android:textSize="16dp"
         android:background="#11DDBB"
     />
 

@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTask">
+    tools:context=".AddTask"
+    android:background="#444444">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/addTaskText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Dodaj task"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/name3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/addTaskText"
+        android:layout_marginTop="30dp"
+        android:text="napis"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/nazwaTask"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/name3"
+        android:layout_marginTop="30dp"
+        android:text="Nazwa zadania:"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="24dp"
+        />
+
+    <EditText
+        android:id="@+id/enterName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:layout_below="@+id/nazwaTask"
+        android:hint="Nazwa zadania"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+    <TextView
+        android:id="@+id/opisTask"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/enterName"
+        android:layout_marginTop="30dp"
+        android:text="Opis zadania:"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="24dp"
+        />
+
+    <EditText
+        android:id="@+id/enterOpis"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:layout_below="@+id/opisTask"
+        android:hint="Opis zadania"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+    <Button
+        android:id="@+id/addTaskButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Dodaj task"
+        android:layout_below="@id/enterOpis"
+        android:layout_centerHorizontal="true"
+        android:background="#11DDBB"/>
+
+    <Button
+        android:id="@+id/buttonBackAdd"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/enterOpis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="80dp"
+        android:background="#6D6DEF"
+        android:textSize="16dp"
+        android:text="Powrót" />
+
+</RelativeLayout>

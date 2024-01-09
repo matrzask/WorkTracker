@@ -37,7 +37,7 @@ public class ArchiwumZ extends AppCompatActivity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         Button beginBut = new Button(this);
-        beginBut.setText("data : status");
+        beginBut.setText("zadanie : status");
         linearLayout.addView(beginBut);
 
         ArrayList<Tasks> tasks =  Database.getTasks(Database.getCurrentEmployee().getId());

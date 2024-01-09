@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewHours">
+    tools:context=".ViewHours"
+    android:background="#444444">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/manager_godziny"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Godziny pracy"
+        android:gravity="center"
+        android:background="#6D6DEF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24dp" />
+
+    <ScrollView
+        android:id="@+id/scrollViewHM"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@id/manager_godziny"
+        android:background="#777777"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="10dp">
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonBackGodz"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/scrollViewHM"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="80dp"
+        android:background="#6D6DEF"
+        android:textSize="16dp"
+        android:text="Powrót" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/manager_godziny"
+        android:layout_marginTop="30dp"
+        android:text="napis"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="24dp"
+        />
+
+</RelativeLayout>

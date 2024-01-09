@@ -1,9 +1,11 @@
 package com.example.worktracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,10 +36,15 @@ public class ManagerScreen extends AppCompatActivity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         ArrayList<DocumentReference> employees = Database.getCurrentEmployee().getPodwladni();
+        LinearLayoutCompat.LayoutParams buttonLayoutParams = new LinearLayoutCompat.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         for(int i = 0; i < employees.size(); i++) {
             Button button = new Button(this);
-            button.setText(Database.getEmployee(employees.get(i).getId()).getFirstName() +" "+ Database.getEmployee(employees.get(i).getId()).getLastName());
+            String buttonText = Database.getEmployee(employees.get(i).getId()).getFirstName() +" "+ Database.getEmployee(employees.get(i).getId()).getLastName();
+            button.setText(buttonText);
+            button.setBackgroundColor(Color.rgb(0, 255, 200));
+            button.setLayoutParams(buttonLayoutParams);
+            buttonLayoutParams.setMargins(10, 30, 10, 30);
             linearLayout.addView(button);
             int finalI = i;
             button.setOnClickListener(new View.OnClickListener() {
