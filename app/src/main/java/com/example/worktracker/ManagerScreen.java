@@ -39,10 +39,11 @@ public class ManagerScreen extends AppCompatActivity {
             Button button = new Button(this);
             button.setText(Database.getEmployee(employees.get(i).getId()).getFirstName() +" "+ Database.getEmployee(employees.get(i).getId()).getLastName());
             linearLayout.addView(button);
-
+            int finalI = i;
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Database.setCurrentEmployee(Database.getEmployee(employees.get(finalI).getId()));
                     openInfoPracownik();
                 }
             });

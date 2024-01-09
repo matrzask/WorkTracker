@@ -1,6 +1,7 @@
 package com.example.worktracker;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,6 +34,15 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     Timer timer;
     TimerTask timerTask;
     Double time = 0.0;
+
+
+    Thread czas = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            timer = new Timer();
+            startTimer();
+        }
+    });
 
     @SuppressLint("MissingInflatedId")
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -71,8 +81,9 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
         timerText = (TextView) findViewById(R.id.godziny);
 
         stopStartButton = (Button) findViewById(R.id.stopstart);
-        timer = new Timer();
     }
+
+
 
     public void openZadania() {
         Intent intent = new Intent(this, Zadania.class);
@@ -101,7 +112,8 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
             stopStartButton.setText("START");
             stopStartButton.setTextColor(ContextCompat.getColor(this, R.color.green));
             timerTask.cancel();
-        }
+       }
+
     }
 
     public void startTimer() {
@@ -131,6 +143,5 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     public String formatTime(int seconds, int minutes, int hours) {
         return String.format("%02d", hours) + ":" + String.format("%02d", minutes) + ":" + String.format("%02d", seconds);
     }
-
 
 }

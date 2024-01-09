@@ -153,6 +153,10 @@ public class Database {
         return currentEmployee;
     }
 
+    public static void setCurrentEmployee(Pracownik p) {
+        currentEmployee = p;
+    }
+
     public static DocumentReference addUser(String username, String password, String idPracownika) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference ref = db.collection("users").document(username);
