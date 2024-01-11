@@ -22,6 +22,11 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Klasa reprezentuje ekran, ktory widzi pracownik po zalogowaniu.
+ * Zawiera przyciski: 'WYLOGUJ', 'ZADANIA' i 'STATYSTYKI' oraz
+ * informacje o przepracowanych danego dnia godzinach.
+ * */
 public class WorkTrackerMainScreen extends AppCompatActivity {
     private Button logout;
     private Button button_zad;

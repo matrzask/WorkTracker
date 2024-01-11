@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Objects;
 
+/**
+ * Klasa reprezentuje ekran ukazujacy pracownikowi lsite jego przeszlych zadan.
+ * Nacisniecie zadania wyswietla jego opis.
+ * */
 public class ArchiwumZ extends AppCompatActivity {
 
     @Override

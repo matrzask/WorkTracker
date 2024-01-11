@@ -15,6 +15,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentuje ekran ukazujacy obecne zadania danego pracownika o statusie 'w trakcie'.
+ * Nacisniecie zadania wyswietla jego opis.
+ * */
 public class WTrakcie extends AppCompatActivity {
     private Button button_back_zad2;
     private Button traktat1;

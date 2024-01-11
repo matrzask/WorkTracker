@@ -14,6 +14,10 @@ import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentuje ekran wyswietlajacy liste godzin pracy pracownikowi
+ * z podzialem na dni.
+ * */
 public class Godziny extends AppCompatActivity {
 
     private Button back4;

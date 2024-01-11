@@ -18,6 +18,10 @@ import com.google.firebase.firestore.DocumentReference;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentuje ekran, ktory widzi manager po zalogowaniu.
+ * Zawiera liste podwladnych mu pracownikow z mozliwascia wejscia w wybrana pozycje.
+ * */
 public class ManagerScreen extends AppCompatActivity {
 
     private TextView managerName;

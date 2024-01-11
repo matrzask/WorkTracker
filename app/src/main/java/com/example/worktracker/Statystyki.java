@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Klasa reprezentuje ekran dajacy dostep do roznych statystyk danemu pracownikowi.
+ * Zawiera przyciski: 'GODZINY PRACY', 'URLOPY', 'ARCHIWUM ZADAN',
+ * ktore wyswietlaja odpowiednie statystyki, oraz 'POWROT'.
+ * */
 public class Statystyki extends AppCompatActivity {
     private Button button_back2;
     private Button urlopy;

@@ -14,6 +14,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentuje ekran wyswietlajacy liste godzin pracy podwladnego pracownika
+ * z podzialem na dni.
+ * */
 public class ViewHours extends AppCompatActivity {
 
     @Override

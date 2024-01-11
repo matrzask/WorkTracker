@@ -15,6 +15,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/**
+ * Klasa reprezentuje ekran wyswietlajacy liste zadan podwladnego pracownika
+ * wraz z ich statusem wykonania.
+ * */
 public class ViewTasks extends AppCompatActivity {
 
     @Override

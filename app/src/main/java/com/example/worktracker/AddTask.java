@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Klasa reprezentuje ekran sluzacy do dodawania nowych zadan(taskow) pracownikom.
+ * Zawiera 2 pola tekstowe umozliwiajace podanie nazwy zadania i opisu oraz
+ * przyciski 'DODAJ TASK' i 'POWROT'.
+ * */
 public class AddTask extends AppCompatActivity {
 
     @Override

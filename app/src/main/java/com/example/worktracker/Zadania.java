@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Klasa reprezentuje ekran umozliwiajacy pracownikowi dostep do obecnych zadan.
+ * Zawiera przyciski: 'DO ZROBIENIA', 'W TRAKCIE', 'WYKONANE' oraz 'POWROT'.
+ * */
 public class Zadania extends AppCompatActivity {
     private Button button_back;
     private Button button_doz;

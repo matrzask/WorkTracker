@@ -14,6 +14,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentuje ekran wyswietlajacy informacje o urlopach pracownikowi, w tym:
+ * liczbe pozostalych dni urlopu, liczbe wykorzystanych oraz lsite dat urlopow.
+ * */
 public class Urlopy extends AppCompatActivity {
     private Button back_stat;
     private TextView restDays;

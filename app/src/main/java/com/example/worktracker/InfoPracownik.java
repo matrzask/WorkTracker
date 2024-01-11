@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Klasa reprezentuje ekran przedstawiajacy dane wybranego pracownika, takie jak:
+ * numer telefonu, email, date urodzenia oraz adres.
+ * Dodatkowo zawiera przyciski: 'ZOBACZ GODZINY', 'ZOBACZ TASKI' i 'DODAJ TASK'.
+ * */
 public class InfoPracownik extends AppCompatActivity {
 
     @Override

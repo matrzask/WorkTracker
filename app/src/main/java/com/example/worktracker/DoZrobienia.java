@@ -19,6 +19,10 @@ import com.google.firebase.database.DatabaseReference;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Klasa reprezentuje ekran ukazujacy obecne zadania danego pracownika o statusie 'do zrobienia'.
+ * Nacisniecie zadania wyswietla jego opis.
+ * */
 public class DoZrobienia extends AppCompatActivity {
     private Button button_back_zad1;
 

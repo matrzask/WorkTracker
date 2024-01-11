@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentuje ekran ukazujacy obecne zadania danego pracownika o statusie 'wykonane'.
+ * Nacisniecie zadania wyswietla jego opis.
+ * */
 public class Wykonane extends AppCompatActivity {
     private Button button_back_zad3;
     private Button wyk1;
