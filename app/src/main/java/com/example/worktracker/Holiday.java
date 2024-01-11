@@ -4,6 +4,11 @@ import com.google.firebase.firestore.Exclude;
 
 import java.util.Date;
 
+
+/**
+ * Klasa reprezentuje urlop danego pracownika. Przechowuje informacje o danym urlopie. Zawiera gettery i
+ * settery pozwalajace na pobieranie i modyfikowanie zmiennych.
+ */
 public class Holiday {
     private String id;
     private int liczbaDni;

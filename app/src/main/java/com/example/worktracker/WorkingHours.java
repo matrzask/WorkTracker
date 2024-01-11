@@ -4,6 +4,13 @@ import com.google.firebase.firestore.Exclude;
 
 import java.util.Date;
 
+
+/**
+ * Klasa reprezentujaca godziny pracy pracownika w danym dniu. Przechowuje dane potrzebne do rozpoznania
+ * pracownika ktory wykonal prace, a takze dodatkowe informacje takie jak
+ * czas rozpoczecia i zakonczenia pracy, ilosc przepracowanych godzin i date danego dnia.
+ * Zawiera wszystkie potrzebne gettery i settery pozwalajace pobierac wartosci zmiennych i je modyfikowac.
+ */
 public class WorkingHours {
     private String id;
     private Date data;
@@ -36,6 +43,10 @@ public class WorkingHours {
         return this;
     }
 
+    /**
+     * Sprawdza czy pracownik przepracowal wymagane minimum 8h
+     * @return true jesli pracowal wiecej lub rowno 8h, false jesli pracowal mniej
+     */
     public boolean czyOsiemGodzin() {
         return godziny >= 8;
     }

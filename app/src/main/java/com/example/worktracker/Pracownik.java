@@ -7,7 +7,10 @@ import com.google.firebase.firestore.GeoPoint;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+/**
+ * Klasa reprezentujaca pracownika. Przechowuje dane pracownika. Zawiera settery i gettery potrzebne
+ * do pobierania danych pracownika i przypisywania zmiennym konkretnych wartosci.
+ */
 public class Pracownik {
     private String id;
     private Date birthDate;
