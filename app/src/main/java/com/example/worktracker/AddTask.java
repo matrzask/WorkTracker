@@ -15,6 +15,10 @@ import android.widget.TextView;
  * */
 public class AddTask extends AppCompatActivity {
 
+    /**
+     * Tworzy ekran do doawania taskow pracownikom.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,9 @@ public class AddTask extends AppCompatActivity {
 
     }
 
+    /**
+     * Wraca do ekranu z informacjami o pracowniku.
+     */
     public void openInfo() {
         Intent intent = new Intent(this, InfoPracownik.class);
         startActivity(intent);

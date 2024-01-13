@@ -14,11 +14,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * Klasa, ktora reprezentuje ekran z rejestracja pracownika. Wyswietlone są pola do uzupelnienia danych, nazwy uzytkownika i hasla.
+ * Zawiera dwa przyciski: 'zatwierdz' i 'powrot'. Nacisniecie przycisku 'zatwierdz' powoduje dodanie pracownika do bazy danych, wraz z jego danymi, username i password.
+ */
 public class Registration extends AppCompatActivity {
     private Button buttonBackReg;
     private Button buttonReg;
 
-
+    /**
+     * Tworzy ekran z rejestracja.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +50,7 @@ public class Registration extends AppCompatActivity {
         TextView telefon = (TextView) findViewById(R.id.registerTelefon);
         TextView email = (TextView) findViewById(R.id.registerEmail);
 
+        // dodaje użytkownika/pracownika do bazy danych
       buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +65,9 @@ public class Registration extends AppCompatActivity {
         });
     }
 
+    /**
+     * Wraca do ekranu z logowaniem.
+     */
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);

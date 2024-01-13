@@ -27,6 +27,10 @@ public class DoZrobienia extends AppCompatActivity {
     private Button button_back_zad1;
 
 
+    /**
+     * Tworzy ekran zadan do zrobienia.
+     * @param savedInstanceState
+     */
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,9 @@ public class DoZrobienia extends AppCompatActivity {
     }
 
 
+    /**
+     * Wraca do ekranu z wyborem rodzajow zadan.
+     */
     public void openZadania() {
         Intent intent = new Intent(this, Zadania.class);
         startActivity(intent);

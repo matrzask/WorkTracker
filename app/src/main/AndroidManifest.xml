@@ -38,9 +38,6 @@
             android:name=".ManagerScreen"
             android:exported="false" />
         <activity
-            android:name=".ManagerMainScreen"
-            android:exported="false" />
-        <activity
             android:name=".Godziny"
             android:exported="false" />
         <activity

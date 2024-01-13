@@ -19,6 +19,13 @@ public class WorkingHours {
     private Date czasZakonczenia;
 
     public WorkingHours() {}
+
+    /**
+     * Konstruktor godzin pracy z parametrami.
+     * @param data
+     * @param czasRozpoczecia
+     * @param czasZakonczenia
+     */
     public WorkingHours(Date data, Date czasRozpoczecia, Date czasZakonczenia) {
         this.data = data;
         this.czasZakonczenia = czasZakonczenia;
@@ -26,18 +33,36 @@ public class WorkingHours {
         this.godziny = (czasZakonczenia.getTime() - czasRozpoczecia.getTime())/3600000f;
     }
 
+    /**
+     * Zwraca id godzin pracy.
+     * @return string
+     */
     @Exclude
     public String getId() {
         return id;
     }
+
+    /**
+     * Zwraca date dnia pracy.
+     * @return date
+     */
     public Date getData() {
         return data;
     }
 
+    /**
+     * Zwraca liczbę godzin pracy.
+     * @return float
+     */
     public float getGodziny() {
         return godziny;
     }
 
+    /**
+     * Ustawia id godzin pracy.
+     * @param id
+     * @return WorkingHours
+     */
     public WorkingHours setId(String id) {
         this.id = id;
         return this;
@@ -51,10 +76,18 @@ public class WorkingHours {
         return godziny >= 8;
     }
 
+    /**
+     * Zwraca czas rozpoczęcia pracy w danym dniu.
+     * @return date
+     */
     public Date getCzasRozpoczecia() {
         return czasRozpoczecia;
     }
 
+    /**
+     * Zwraca czas zakończenia pracy w danym dniu.
+     * @return date
+     */
     public Date getCzasZakonczenia() {
         return czasZakonczenia;
     }

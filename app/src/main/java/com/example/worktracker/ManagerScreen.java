@@ -25,6 +25,11 @@ import java.util.ArrayList;
 public class ManagerScreen extends AppCompatActivity {
 
     private TextView managerName;
+
+    /**
+     * Tworzy ekran glowny przelozonego.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,11 +77,17 @@ public class ManagerScreen extends AppCompatActivity {
 
     }
 
+    /**
+     * Po wybraniu danego pracownika, otwiera ekran z jego informacjami.
+     */
     public void openInfoPracownik() {
         Intent intent = new Intent(this, InfoPracownik.class);
         startActivity(intent);
     }
 
+    /**
+     * Do funkcjonowania przycisku wyloguj, wraca do strony z logowaniem.
+     */
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);

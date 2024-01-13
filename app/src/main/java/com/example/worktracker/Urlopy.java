@@ -16,13 +16,17 @@ import java.util.ArrayList;
 
 /**
  * Klasa reprezentuje ekran wyswietlajacy informacje o urlopach pracownikowi, w tym:
- * liczbe pozostalych dni urlopu, liczbe wykorzystanych oraz lsite dat urlopow.
+ * liczbe pozostalych dni urlopu, liczbe wykorzystanych oraz liste dat urlopow.
  * */
 public class Urlopy extends AppCompatActivity {
     private Button back_stat;
     private TextView restDays;
     private TextView haveDays;
 
+    /**
+     * Tworzy ekran z informacjami na temat urlopow pracownika.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +72,9 @@ public class Urlopy extends AppCompatActivity {
         scrollViewH.addView(linearLayout);
     }
 
+    /**
+     * Wraca do ekranu z wyborem rodzaju statystyki.
+     */
     public void openStatystyki() {
         Intent intent = new Intent(this, Statystyki.class);
         startActivity(intent);

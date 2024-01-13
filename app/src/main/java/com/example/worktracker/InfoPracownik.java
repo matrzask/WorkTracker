@@ -14,7 +14,10 @@ import android.widget.TextView;
  * Dodatkowo zawiera przyciski: 'ZOBACZ GODZINY', 'ZOBACZ TASKI' i 'DODAJ TASK'.
  * */
 public class InfoPracownik extends AppCompatActivity {
-
+    /**
+     * Tworzy ekran z informacjami na temat pracownika.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,21 +87,33 @@ public class InfoPracownik extends AppCompatActivity {
         });
     }
 
+    /**
+     * Otwiera ekran dla przelozonego, aby zobaczyl godziny pracy swojego pracownika.
+     */
     public void openViewHours() {
         Intent intent = new Intent(this, ViewHours.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran dla przelozonego, aby zobaczyl taski swojego pracownika.
+     */
     public void openViewTasks() {
         Intent intent = new Intent(this, ViewTasks.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran dla przelozonego, aby dodal task swojemu pracownikowi.
+     */
     public void openAddTask() {
         Intent intent = new Intent(this, AddTask.class);
         startActivity(intent);
     }
 
+    /**
+     * Wraca do ekranu ze wszystkimi pracownikami przelozonego.
+     */
     public void openMainMenu() {
         Intent intent = new Intent(this, ManagerScreen.class);
         startActivity(intent);

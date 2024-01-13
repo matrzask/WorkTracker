@@ -22,6 +22,10 @@ public class Wykonane extends AppCompatActivity {
     private Button button_back_zad3;
     private Button wyk1;
 
+    /**
+     * Metoda, która tworzy ekran wykonanych zadan.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,10 @@ public class Wykonane extends AppCompatActivity {
         scrollView3.addView(linearLayout);
     }
 
+
+    /**
+     * Wraca z powrotem do ekranu zadan.
+     */
     public void openZadania() {
         Intent intent = new Intent(this, Zadania.class);
         startActivity(intent);

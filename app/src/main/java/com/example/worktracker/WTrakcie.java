@@ -23,6 +23,10 @@ public class WTrakcie extends AppCompatActivity {
     private Button button_back_zad2;
     private Button traktat1;
 
+    /**
+     * Tworzy ekran z zadaniami pracownika o statusie 'w trakcie'.
+     * @param savedInstanceState
+     */
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,9 @@ public class WTrakcie extends AppCompatActivity {
         scrollView2.addView(linearLayout);
     }
 
+    /**
+     * Wraca do menu wyboru statusu zadan.
+     */
     public void openZadania() {
         Intent intent = new Intent(this, Zadania.class);
         startActivity(intent);

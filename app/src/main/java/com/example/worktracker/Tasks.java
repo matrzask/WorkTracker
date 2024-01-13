@@ -13,33 +13,68 @@ public class Tasks {
     private String opis;
 
     public Tasks() {}
+
+    /**
+     * Konstruktor taskow, uzywany glownie do dodawania taskow.
+     * @param nazwa
+     * @param opis
+     */
     public Tasks(String nazwa, String opis) {
         this.nazwa = nazwa;
         this.status = "Do zrobienia";
         this.opis = opis;
     }
+
+    /**
+     * Konstruktor taskow, z mozliwoscia wyboru statusu zadania.
+     * @param nazwa
+     * @param opis
+     * @param status
+     */
     public Tasks(String nazwa, String opis, String status) {
         this.nazwa = nazwa;
         this.status = status;
         this.opis = opis;
     }
+
+    /**
+     * zwraca id zadania.
+     * @return string
+     */
     @Exclude
     public String getId() {
         return id;
     }
 
+    /**
+     * zwraca nazwę zadania.
+     * @return string
+     */
     public String getNazwa() {
         return nazwa;
     }
 
+    /**
+     * zwraca status zadania.
+     * @return string
+     */
     public String getStatus() {
         return status;
     }
 
+    /**
+     * zwraca opis zadania.
+     * @return string
+     */
     public String getOpis() {
         return opis;
     }
 
+    /**
+     * Ustawia id zadania.
+     * @param id
+     * @return Tasks
+     */
     public Tasks setId(String id) {
         this.id = id;
         return this;

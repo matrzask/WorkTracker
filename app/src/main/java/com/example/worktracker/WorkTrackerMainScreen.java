@@ -49,6 +49,10 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
         }
     });
 
+    /**
+     * Tworzy ekran glowny pracownika.
+     * @param savedInstanceState
+     */
     @SuppressLint("MissingInflatedId")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -89,17 +93,25 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Otwiera menu zadania pracownika.
+     */
     public void openZadania() {
         Intent intent = new Intent(this, Zadania.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera menu statystyk pracownika.
+     */
     public void openStatystyki() {
         Intent intent = new Intent(this, Statystyki.class);
         startActivity(intent);
     }
 
+    /**
+     * Wylogowywuje pracownika.
+     */
     public void openLogin() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);

@@ -23,9 +23,18 @@ import com.google.firebase.firestore.DocumentReference;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Klasa reprezentuje ekran z interferjsem do logowania uzytkownika, ekran startowy naszej aplikacji. Sa dwa pola do wypelnienia, username i password.
+ */
+
 public class Login extends AppCompatActivity {
 
     private Button registerButton;
+
+    /**
+     * Tworzy ekran do logowania.
+     * @param savedInstanceState
+     */
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +68,25 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    /**
+     * Otwiera ekran glowny pracownika.
+     */
     public void openMainScreen() {
         Intent intent = new Intent(this, WorkTrackerMainScreen.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran do rejestracji.
+     */
     public  void openRegisterMenu() {
         Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran glowny przelozonego.
+     */
     public void openManagerScreen() {
         Intent intent = new Intent(this, ManagerScreen.class);
         startActivity(intent);

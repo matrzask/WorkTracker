@@ -26,6 +26,19 @@ public class Pracownik {
 
     public Pracownik() {}
 
+    /**
+     * Konstruktor pracownika z parametrami.
+     * @param firstName
+     * @param lastName
+     * @param birthDate
+     * @param ulica
+     * @param miejscowosc
+     * @param kod
+     * @param telefon
+     * @param email
+     * @param podwladni
+     * @param miejscePracy
+     */
     public Pracownik(String firstName, String lastName,  Date birthDate,
                      String ulica, String miejscowosc, String kod, String telefon, String email,
                      ArrayList<DocumentReference> podwladni, GeoPoint miejscePracy) {
@@ -41,52 +54,102 @@ public class Pracownik {
         this.miejscePracy = miejscePracy;
     }
 
+
+    /**
+     * zwraca imie pracownika
+     * @return string
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * zwraca nazwisko pracownika
+     * @return string
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * zwraca datę urodzenia pracownika
+     * @return date
+     */
     public Date getBirthDate() {
         return birthDate;
     }
 
+    /**
+     * zwraca ulicę i numer pracownika
+     * @return string
+     */
     public String getUlica() {
         return ulica;
     }
 
+    /**
+     * zwraca miejscowosc zamieszkania
+     * @return string
+     */
     public String getMiejscowosc() {
         return miejscowosc;
     }
 
+    /**
+     * zwraca kod pocztowy
+     * @return string
+     */
     public String getKod() {
         return kod;
     }
 
+    /**
+     * zwraca telefon
+     * @return string
+     */
     public String getTelefon() {
         return telefon;
     }
 
+    /**
+     * zwraca email
+     * @return string
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * zwraca liste podwladnych w przypadku managera, w przypadku zwyklego pracownika lista jest pusta.
+     * @return string
+     */
     public ArrayList<DocumentReference> getPodwladni() {
         return podwladni;
     }
 
+    /**
+     * Ustawia id pracownika
+     * @param id
+     * @return Pracownik
+     */
     public Pracownik setId(String id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * zwraca id pracownika
+     * @return string
+     */
     @Exclude
     public String getId() {
         return id;
     }
 
+    /**
+     * zwrca lokalizacje, miejsce pracy
+     * @return GeoPoint
+     */
     public GeoPoint getMiejscePracy() {
         return miejscePracy;
     }

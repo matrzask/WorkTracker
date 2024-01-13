@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -20,7 +21,10 @@ import java.util.Comparator;
  * wraz z ich statusem wykonania.
  * */
 public class ViewTasks extends AppCompatActivity {
-
+    /**
+     * Tworzy ekran z taskami podwladnego.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +70,13 @@ public class ViewTasks extends AppCompatActivity {
             else button.setBackgroundColor(Color.rgb(140, 255, 140));
             button.setLayoutParams(buttonLayoutParams);
             buttonLayoutParams.setMargins(10, 30, 10, 30);
+            int finalI = i;
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(ViewTasks.this, tasks.get(finalI).getOpis(), Toast.LENGTH_SHORT).show();
+                }
+            });
             linearLayout.addView(button);
         }
 
@@ -73,6 +84,9 @@ public class ViewTasks extends AppCompatActivity {
 
     }
 
+    /**
+     * Otwiera ekran z informacjami na temat podwladnego.
+     */
     public void openInfo() {
         Intent intent = new Intent(this, InfoPracownik.class);
         startActivity(intent);

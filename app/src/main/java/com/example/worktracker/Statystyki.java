@@ -17,6 +17,10 @@ public class Statystyki extends AppCompatActivity {
     private Button urlopy;
     private Button buttonGod;
 
+    /**
+     * Tworzy ekran do wyboru statystyk.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,21 +59,34 @@ public class Statystyki extends AppCompatActivity {
         });
     }
 
+
+    /**
+     * Wraca do ekranu glownego pracownika.
+     */
     public void openMainMenu() {
         Intent intent = new Intent(this, WorkTrackerMainScreen.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran z informacjami na temat urlopow pracownika.
+     */
     public void openUrlopy() {
         Intent intent = new Intent(this, Urlopy.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran z informacjami na temat godzin pracy pracownika.
+     */
     public void openGodziny() {
         Intent intent = new Intent(this, Godziny.class);
         startActivity(intent);
     }
 
+    /**
+     * Otwiera ekran z archiwum zadan.
+     */
     public void openArchiwum() {
         Intent intent = new Intent(this, ArchiwumZ.class);
         startActivity(intent);

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,10 @@ import java.util.ArrayList;
  * z podzialem na dni.
  * */
 public class ViewHours extends AppCompatActivity {
-
+    /**
+     * Tworzy ekran z godzinami pracy podwladnego.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +49,17 @@ public class ViewHours extends AppCompatActivity {
             Button button = new Button(this);
             String s = hours.get(i).getData().toString().substring(4, 10) + hours.get(i).getData().toString().substring(23, 28) + " : " + hours.get(i).getGodziny() + " HOURS";
             button.setText(s);
-            if(hours.get(i).getGodziny() < 8) button.setBackgroundColor(Color.rgb(255, 120, 120));
+            if(hours.get(i).czyOsiemGodzin()) button.setBackgroundColor(Color.rgb(255, 120, 120));
             else button.setBackgroundColor(Color.rgb(153, 255, 153));
             button.setLayoutParams(buttonLayoutParams);
             buttonLayoutParams.setMargins(10, 30, 10, 30);
+            int finalI = i;
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(ViewHours.this, hours.get(finalI).getCzasRozpoczecia() + " : " + hours.get(finalI).getCzasZakonczenia(), Toast.LENGTH_SHORT).show();
+                }
+            });
             linearLayout.addView(button);
         }
 
@@ -65,6 +76,9 @@ public class ViewHours extends AppCompatActivity {
 
     }
 
+    /**
+     * Wraca do ekranu z informacjami na temat pracownika.
+     */
     public void openInfo() {
         Intent intent = new Intent(this, InfoPracownik.class);
         startActivity(intent);

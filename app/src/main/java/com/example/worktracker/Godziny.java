@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,10 @@ public class Godziny extends AppCompatActivity {
 
     private Button back4;
 
+    /**
+     * Tworzy ekran z godzinami pracy pracownika.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +56,17 @@ public class Godziny extends AppCompatActivity {
             String s = workingHours.get(i).getData().toString().substring(0, 10) + workingHours.get(i).getData().toString().substring(23, 28) + " : " + workingHours.get(i).getGodziny() + " hours";
             button.setText(s);
             button.setTextSize(16);
-            if(workingHours.get(i).getGodziny() < 8) button.setBackgroundColor(Color.rgb(255, 120, 120));
+            if(workingHours.get(i).czyOsiemGodzin()) button.setBackgroundColor(Color.rgb(255, 120, 120));
             else button.setBackgroundColor(Color.rgb(153, 255, 153));
             button.setLayoutParams(buttonLayoutParams);
             buttonLayoutParams.setMargins(10, 30, 10, 30);
+            int finalI = i;
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(Godziny.this, workingHours.get(finalI).getCzasRozpoczecia() + " : " + workingHours.get(finalI).getCzasZakonczenia(), Toast.LENGTH_SHORT).show();
+                }
+            });
             linearLayout.addView(button);
 
         }
@@ -63,6 +75,9 @@ public class Godziny extends AppCompatActivity {
     }
 
 
+    /**
+     * Wraca do ekranu z wyborem rodzaju statystyki.
+     */
     public void openStatystyki() {
         Intent intent = new Intent(this, Statystyki.class);
         startActivity(intent);

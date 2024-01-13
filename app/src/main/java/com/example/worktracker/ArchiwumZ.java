@@ -17,11 +17,15 @@ import java.util.Comparator;
 import java.util.Objects;
 
 /**
- * Klasa reprezentuje ekran ukazujacy pracownikowi lsite jego przeszlych zadan.
+ * Klasa reprezentuje ekran ukazujacy pracownikowi liste jego przeszlych zadan.
  * Nacisniecie zadania wyswietla jego opis.
  * */
 public class ArchiwumZ extends AppCompatActivity {
 
+    /**
+     * Tworzy ekran z archiwum zadan.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +81,10 @@ public class ArchiwumZ extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Wraca do ekranu z wyborem rodzaju statystyki.
+     */
     public void openStatystyki() {
         Intent intent = new Intent(this, Statystyki.class);
         startActivity(intent);

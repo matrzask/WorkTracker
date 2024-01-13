@@ -170,7 +170,7 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/registerText"
-        android:text="Zarejestruj"
+        android:text="Zatwierdź"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
