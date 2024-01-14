@@ -14,6 +14,5 @@
 ![image](https://github.com/matrzask/WorkTracker/assets/113452267/872fa2b9-ec63-487a-ba60-0864021ba7ad)
 
 - Po uruchomieniu wyświetli się nasza aplikacja w maszynie wirtualnej wybranego urządzenia:
-<img src="(https://github.com/matrzask/WorkTracker/assets/113452267/79c4b6c5-c35e-447a-9fba-b45775d09963" alt="image" width="100" height="auto">
-
+![image](https://github.com/matrzask/WorkTracker/assets/113452267/9ce0e24c-1591-4456-a154-23da17eece93)
 
