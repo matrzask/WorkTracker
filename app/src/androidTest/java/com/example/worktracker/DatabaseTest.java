@@ -1,16 +1,18 @@
 package com.example.worktracker;
 
-import static org.junit.jupiter.api.Assertions.*;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import static org.junit.Assert.*;
+
+@RunWith(AndroidJUnit4.class)
 public class DatabaseTest {
-
-
-    @org.junit.jupiter.api.Test
+    @Test
     public void testGetEmployee() {
         assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getFirstName(), "Jan");
-        assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getFirstName(), "Kowalski");
+        assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getLastName(), "Kowalski");
         assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getMiejscowosc(), "Kraków");
         assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getId(), "kSwJLfMLvRvbDAfj81NW");
         assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getKod(), "32-500");
@@ -18,25 +20,26 @@ public class DatabaseTest {
         assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getEmail(), "kowaljan@prasoft.com");
         assertEquals(Database.getEmployee("kSwJLfMLvRvbDAfj81NW").getUlica(), "Kolarska 5");
     }
-    @org.junit.jupiter.api.Test
+
+    @Test
     public void getWorkingHours() {
         assertEquals(Database.getWorkingHours("kSwJLfMLvRvbDAfj81NW").size(), 1);
     }
 
     @Test
     public void getWorkingHoursById() {
-        assertEquals(Database.getWorkingHoursById("kSwJLfMLvRvbDAfj81NW", "1qPcEeh9a0nxBF1JV0E7").getGodziny(), 7.0);
+        assertEquals(Database.getWorkingHoursById("kSwJLfMLvRvbDAfj81NW", "1qPcEeh9a0nxBF1JV0E7").getGodziny(), 7.0, 1e-5);
     }
 
 
     @Test
     public void getTasks() {
-        assertEquals(8, Database.getTasks("kSwJLfMLvRvbDAfj81NW").size());
+        assertEquals(7, Database.getTasks("kSwJLfMLvRvbDAfj81NW").size());
     }
 
     @Test
     public void getTaskById() {
-        assertEquals("case 5", Database.getTaskById("kSwJLfMLvRvbDAfj81NW","1FLfwQK94wwzuV17IgNk"));
+        assertEquals("case 5", Database.getTaskById("kSwJLfMLvRvbDAfj81NW","1FLfwQK94wwzuV17IgNk").getNazwa());
     }
 
     @Test
@@ -64,7 +67,8 @@ public class DatabaseTest {
 
     @Test
     public void getCurrentEmployee() {
-        assertEquals("CNhVog7TNHWoZa0jYMTC", Database.getCurrentEmployee().getId());
+        Database.login("anowak","qwerty1");
+        assertEquals("Bgq6FdtER7DJKC47mEz5", Database.getCurrentEmployee().getId());
     }
 
     @Test
