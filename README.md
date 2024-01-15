@@ -1,4 +1,4 @@
-# Aby wejść w dokumetację, trzeba otworzyć package-summary.html: najpierw trzeba sklonować projektktóry znajduje się w folderze documentation/com/example/worktracker!!!
+# Aby wejść w dokumetację, trzeba ją pobrać w zipie, wypakować i uruchomić plik index.html!!
  
  
 # WorkTracker - aplikacja do śledzenia czasu pracy i wykonanych zadań pracowników.
