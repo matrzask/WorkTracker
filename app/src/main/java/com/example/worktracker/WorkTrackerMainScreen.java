@@ -3,11 +3,13 @@ package com.example.worktracker;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ import com.google.firebase.Firebase;
 import com.google.firebase.Timestamp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.GeoPoint;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -59,6 +62,7 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_tracker_main_screen);
+
         button_zad = (Button) findViewById(R.id.button_zad);
         button_zad.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +94,7 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
         timerText = (TextView) findViewById(R.id.godziny);
 
         stopStartButton = (Button) findViewById(R.id.stopstart);
+        timer = new Timer();
     }
 
 
@@ -118,18 +123,24 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     }
 
     public void startstopTapped(View view) {
-        if(timerstarted == false) {
-            timerstarted = true;
-            stopStartButton.setText("STOP");
-            stopStartButton.setTextColor(ContextCompat.getColor(this, R.color.red));
-            startTimer();
+        if(Lokalizacja.IsEmployeeAtWork(WorkTrackerMainScreen.this, 160)) {
+            if(timerstarted == false) {
+                timerstarted = true;
+                stopStartButton.setText("STOP");
+                stopStartButton.setTextColor(ContextCompat.getColor(this, R.color.red));
+                startTimer();
+            }
+            else {
+                timerstarted = false;
+                stopStartButton.setText("START");
+                stopStartButton.setTextColor(ContextCompat.getColor(this, R.color.green));
+                timerTask.cancel();
+            }
         }
         else {
-            timerstarted = false;
-            stopStartButton.setText("START");
-            stopStartButton.setTextColor(ContextCompat.getColor(this, R.color.green));
-            timerTask.cancel();
-       }
+            Toast.makeText(WorkTrackerMainScreen.this, "Lokalizacja nie zgadza się! Skontaktuj się z przełożonym.", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 
