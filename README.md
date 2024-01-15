@@ -1,3 +1,6 @@
+# Aby wejść w dokumetację, trzeba otworzyć package-summary.html: najpierw trzeba sklonować projektktóry znajduje się w folderze documentation/com/example/worktracker!!!
+ 
+ 
 # WorkTracker - aplikacja do śledzenia czasu pracy i wykonanych zadań pracowników.
 
 ## Instrukcja kompilacji
@@ -15,4 +18,6 @@
 
 - Po uruchomieniu wyświetli się nasza aplikacja w maszynie wirtualnej wybranego urządzenia:
 ![image](https://github.com/matrzask/WorkTracker/assets/113452267/9ce0e24c-1591-4456-a154-23da17eece93)
+
+
 
