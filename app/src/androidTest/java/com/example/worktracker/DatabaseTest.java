@@ -43,10 +43,6 @@ public class DatabaseTest {
     }
 
     @Test
-    public void addTask() {
-    }
-
-    @Test
     public void getHolidays() {
         assertEquals(1, Database.getHolidays("kSwJLfMLvRvbDAfj81NW").size());
     }
@@ -54,10 +50,6 @@ public class DatabaseTest {
     @Test
     public void getHolidayById() {
         assertEquals(5, Database.getHolidayById("kSwJLfMLvRvbDAfj81NW", "CNhVog7TNHWoZa0jYMTC").getLiczbaDni());
-    }
-
-    @Test
-    public void addHoliday() {
     }
 
     @Test
@@ -72,14 +64,9 @@ public class DatabaseTest {
     }
 
     @Test
-    public void setCurrentEmployee() {
-    }
-
-    @Test
     public void getCurrentEmployer() {
-    }
-
-    @Test
-    public void addUser() {
+        Database.setCurrentEmployee(Database.getEmployee("Bgq6FdtER7DJKC47mEz5"),Database.getEmployee("x3wd9H9ARX27ifzmGQ3I"));
+        assertEquals("Tom", Database.getCurrentEmployer().getFirstName() );
+        assertEquals(Database.getCurrentEmployee().getFirstName(), Database.getEmployee(Database.getCurrentEmployer().getPodwladni().get(0)).getFirstName());
     }
 }
