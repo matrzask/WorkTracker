@@ -123,7 +123,7 @@ public class WorkTrackerMainScreen extends AppCompatActivity {
     }
 
     public void startstopTapped(View view) {
-        if(Lokalizacja.IsEmployeeAtWork(WorkTrackerMainScreen.this, 160)) {
+        if(Lokalizacja.IsEmployeeAtWork(WorkTrackerMainScreen.this, 0.01F)) {
             if(timerstarted == false) {
                 timerstarted = true;
                 stopStartButton.setText("STOP");
